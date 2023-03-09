@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Obtener el sexo por el nombre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-input placeholder="Escribir el nombre" [(ngModel)]="name"></ion-input>
+    <ion-button (click)="searchsex()"> Buscar</ion-button>
+  </ion-item>
+
+<ion-list>
+  <ion-card *ngIf="gender != ''">
+    <div *ngIf="gender == 'female'">
+      <img alt="sexo" src="assets/femenino.png" />
+    </div>
+    <div *ngIf="gender == 'male'">
+      <img alt="sexo" src="assets/masculino.png" />
+    </div>
+    <ion-card-header>
+      <ion-card-title>{{name}}</ion-card-title>
+      <ion-card-subtitle>El sexo es {{gender}}</ion-card-subtitle>
+    </ion-card-header>
+  
+  </ion-card>
+</ion-list>
+
+</ion-content>

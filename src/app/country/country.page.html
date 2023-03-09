@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Buscar universidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input placeholder="Un pais en ingles" [(ngModel)]="name"></ion-input>
+    <ion-button (click)="searchcountry()"> Buscar</ion-button>
+  </ion-item>
+
+<ion-list>
+  <ion-item *ngFor="let item of getcountry">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{item.name}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-button fill="clear">{{item.domains}}</ion-button>
+      <ion-button fill="clear"><a target="_blank" href="{{item.web_pages}}">{{item.web_pages}}</a></ion-button>
+    </ion-card>
+  </ion-item>
+</ion-list>
+</ion-content>
